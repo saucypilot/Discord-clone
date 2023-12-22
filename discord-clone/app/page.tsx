@@ -1,7 +1,11 @@
+import { Button } from "@/components/ui/button";
+import {cn} from "@/lib/utils";
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-6xl font-bold">Discord Clone</h1>
+    <div className="">
+      <p className="text-3xl font-bold text-indigo-500">Discord clone</p>
+      <Button>Click me</Button>
     </div>
   )
 }
