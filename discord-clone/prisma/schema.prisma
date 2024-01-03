@@ -72,19 +72,19 @@ enum ChannelType{
 }
 
 model Channel{
-  id String @id @default(uuid())
-  name String
-  type ChannelType @default(TEXT)
+ id String @id @default(uuid())
+ name String
+ type ChannelType @default(TEXT)
 
-  profileId String
-  profile Profile @relation(fields: [serverId], references: [id], onDelete: Cascade)
+ profileId String
+ profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade, map: "Channel_profileId_fkey")
 
-  serverId String
-  server Sever @relation(fields: [serverId], references: [id], onDelete: Cascade)
+ serverId String
+ server Sever @relation(fields: [serverId], references: [id], onDelete: Cascade, map: "Channel_serverId_fkey")
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
 
-  @@index([profileId])
-  @@index([serverId])
+ @@index([profileId])
+ @@index([serverId])
 }
