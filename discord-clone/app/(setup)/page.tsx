@@ -1,8 +1,8 @@
 import { db } from "@/lib/db";
-import {initialProfile} from "@/lib/initial-profile";
+import { initialProfile } from "@/lib/initial-profile";
 import { redirect } from "next/navigation";
 
-const StepupPage = async () => {    
+const SetupPage = async () => {    
     const profile = await initialProfile();
     const server = await db.server.findFirst({
         where: {
@@ -20,4 +20,4 @@ const StepupPage = async () => {
     return <div>Create a server</div>;
 }
 
-export default StepupPage;
+export default SetupPage;
